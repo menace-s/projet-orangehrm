@@ -1,10 +1,10 @@
 import { test, expect } from '@playwright/test';
-import { LoginPage } from '../../pages/LoginPage';
-import { validUsers, invalidUsers } from '../../helpers/testData';
+import { LoginPage } from '../../pages/OrangeHRM/LoginPage';
+import { validUsers, invalidUsers } from '../../utils/testData';
 
 test.describe('Tests de connexion OrangeHRM', () => {
     
-    let loginPage;
+    let loginPage: LoginPage;
     
     test.beforeEach(async ({ page }) => {
         loginPage = new LoginPage(page);

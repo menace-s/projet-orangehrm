@@ -1,5 +1,3 @@
-# Supprimer le fichier de test exemple
-rm tests/example.spec.js
 ```
 
 Ou garde-le pour référence.
@@ -12,7 +10,7 @@ Ou garde-le pour référence.
 ```
 📦 projet-orangehrm
 │
-├── 📁 tests/              ← TES TESTS (ce que tu veux tester)
+├── 📁 specs/              ← TES TESTS (ce que tu veux tester)
 │   └── 📁 auth/
 │       └── login.spec.js  ← Tests de connexion
 │
@@ -20,7 +18,7 @@ Ou garde-le pour référence.
 │   ├── LoginPage.js       ← Actions sur la page de login
 │   └── DashboardPage.js   ← Actions sur le dashboard
 │
-├── 📁 helpers/            ← UTILITAIRES (données et fonctions)
+├── 📁 utils/            ← UTILITAIRES (données et fonctions)
 │   ├── testData.js        ← Données de test (users, etc.)
 │   └── utils.js           ← Fonctions utiles
 │
