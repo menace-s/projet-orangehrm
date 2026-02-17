@@ -11,10 +11,10 @@ export class LoginPage {
         this.page = page;
 
         // Sélecteurs (locators) - à compléter
-        // this.usernameInput = page.getByRole("textbox", { name: "Username" });
-        // this.passwordInput = page.getByRole("textbox", { name: "Password" });
-        this.usernameInput = page.getByPlaceholder('Username');
-        this.passwordInput = page.getByPlaceholder('Password');
+        this.usernameInput = page.getByRole("textbox", { name: "Username" });
+        this.passwordInput = page.getByRole("textbox", { name: "Password" });
+        // this.usernameInput = page.getByPlaceholder('Username');
+        // this.passwordInput = page.getByPlaceholder('Password');
         this.loginButton = page.getByRole("button", { name: "Login" });
     }
 
