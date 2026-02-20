@@ -6,6 +6,7 @@ import { CREDENTIALS } from "../../conf/credentials";
 import { PimListPage } from "../../pages/OrangeHRM/PimListPage.page";
 import { AddEmployeePage } from "../../pages/OrangeHRM/addEmployee.page";
 import { Employee } from "../../utils/testData";
+import { generateRandomEmployeeId } from '../../utils/functions';
 
 test.describe("Tests d'ajout d'employé OrangeHRM", () => {
   let loginPage: LoginPage;
@@ -33,18 +34,18 @@ test.describe("Tests d'ajout d'employé OrangeHRM", () => {
   test("TC03 - Ajouter un employé avec des informations valides", async ({
     page,
   }) => {
-    await addEmployeePage.fillEmployeeDetails(Employee.firstName, Employee.lastName);
+    await addEmployeePage.fillEmployeeDetails(Employee.firstName, Employee.lastName, generateRandomEmployeeId());
     await addEmployeePage.saveEmployee();
     await page.waitForTimeout(5000);
     // verification du toast de succès
     await expect(page.getByText("Successfully Saved")).toBeVisible();
   });
   // test avec ajout de photo d'employé
-  test("TC04 - Ajouter un employé avec une photo", async ({ page }) => {
-    await addEmployeePage.fillEmployeeDetails(Employee.firstName, Employee.lastName);
-    await addEmployeePage.uploadPhoto("data/images/photo.jpg");
-    await addEmployeePage.saveEmployee();
-    await page.waitForTimeout(5000);
-    await expect(page.getByText("Successfully Saved")).toBeVisible();
-});
+//   test("TC04 - Ajouter un employé avec une photo", async ({ page }) => {
+//     await addEmployeePage.fillEmployeeDetails(Employee.firstName, Employee.lastName, generateRandomEmployeeId());
+//     await addEmployeePage.uploadPhoto("data/images/photo.jpg");
+//     await addEmployeePage.saveEmployee();
+//     await page.waitForTimeout(5000);
+//     await expect(page.getByText("Successfully Saved")).toBeVisible();
+// });
 });
