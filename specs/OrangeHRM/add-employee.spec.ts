@@ -36,16 +36,15 @@ test.describe("Tests d'ajout d'employé OrangeHRM", () => {
   }) => {
     await addEmployeePage.fillEmployeeDetails(Employee.firstName, Employee.lastName, generateRandomEmployeeId());
     await addEmployeePage.saveEmployee();
-    await page.waitForTimeout(5000);
     // verification du toast de succès
-    await expect(page.getByText("Successfully Saved")).toBeVisible();
+    await expect(page.locator(".oxd-toast--success")).toBeVisible();
   });
   // test avec ajout de photo d'employé
 //   test("TC04 - Ajouter un employé avec une photo", async ({ page }) => {
 //     await addEmployeePage.fillEmployeeDetails(Employee.firstName, Employee.lastName, generateRandomEmployeeId());
 //     await addEmployeePage.uploadPhoto("data/images/photo.jpg");
 //     await addEmployeePage.saveEmployee();
-//     await page.waitForTimeout(5000);
+//     
 //     await expect(page.getByText("Successfully Saved")).toBeVisible();
 // });
 });
