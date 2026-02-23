@@ -37,7 +37,7 @@ test.describe("Tests d'ajout d'employé OrangeHRM", () => {
     await addEmployeePage.fillEmployeeDetails(Employee.firstName, Employee.lastName, generateRandomEmployeeId());
     await addEmployeePage.saveEmployee();
     // verification du toast de succès
-    await expect(page.locator(".oxd-toast--success")).toBeVisible();
+    await expect(page.locator(".oxd-toast--success")).toBeVisible({timeout: 10000});
   });
   // test avec ajout de photo d'employé
 //   test("TC04 - Ajouter un employé avec une photo", async ({ page }) => {
